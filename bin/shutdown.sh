@@ -1,0 +1,3 @@
+echo shutdown tt log service ...
+nohup ant -f build.xml 'stop_service' >> ../logs/startup.log &
+tail -20 ../logs/startup.log
