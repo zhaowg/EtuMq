@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
-<project name="TTNoticeServer" default="start_service" basedir="..">
-	<description>TTNoticeServer</description>
+<project name="EtuMq" default="start_service" basedir="..">
+	<description>Easy To Use Message Queue</description>
 
 	<target name="init" description="Initialize the target...">
 		<!-- initialize the parameter-->
 		<property environment="env" />
 		<property name="name" value="${ant.project.name}" />
-		<property name="version" value="V5.0.0" />
+		<property name="version" value="V0.0.1" />
 		<property name="year" value="2013" />
 		<echo message="Building ${ant.project.name} ${version}...." />
 		<property name="build.compiler" value="modern" />
