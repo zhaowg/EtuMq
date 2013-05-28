@@ -14,7 +14,10 @@
            http://www.springframework.org/schema/aop   
            http://www.springframework.org/schema/aop/spring-aop-3.0.xsd   
            ">
-	<context:property-placeholder location="classpath:server_params.properties" />
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	  <property name="location" value="classpath:server_params.properties"></property>
+	  <property name="ignoreUnresolvablePlaceholders" value="true"></property>
+	</bean>
 	
 	<context:annotation-config />
 	

@@ -1,4 +1,4 @@
-package tt.start;
+package com.start;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -19,13 +19,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.xml.sax.SAXException;
 
-import tt.start.TTServerConfig.MqParams;
-
 /**
  * TT 服务启动类，负责启动web Server服务
  * 服务使用Jetty为容器，采用Spring 3中的Java Config方式通过TTServerConfig类进行依赖注入配置
  * 参数文件参见classpath:server_params.properties参数配置
- * @author yxy
+ * @author zhaowg
  *
  */
 public class TTServerStart {
@@ -71,7 +69,7 @@ public class TTServerStart {
 		this.isGzip = isGzip;
 	}
 
-	private Server jettyServer(String warPath, MqParams mqParams) {
+	private Server jettyServer(String warPath) {
 		Server server = new Server();
 		server.setSendServerVersion(true);
 		server.setStopAtShutdown(true);
@@ -140,8 +138,7 @@ public class TTServerStart {
 					}
 				}
 			}
-			MqParams mqParams = cntxt.getBean(MqParams.class);
-			srvStart.jettyServer(warPath, mqParams);
+			srvStart.jettyServer(warPath);
 			srvStart.start();//服务启动
 			
 			logger.info("====== server info connector:"

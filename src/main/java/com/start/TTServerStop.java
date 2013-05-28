@@ -1,4 +1,4 @@
-package tt.start;
+package com.start;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -13,7 +13,7 @@ import org.apache.log4j.Logger;
 
 /**
  * TT服务停止线程
- * @author yxy
+ * @author zhaowg
  *
  */
 public class TTServerStop {
